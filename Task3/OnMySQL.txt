@@ -1,0 +1,13 @@
+sudo service mysqld start
+
+mysql -u root -p
+
+CREATE USER 'wordpress-user'@'<private-ip-of-wp>' IDENTIFIED BY 'password';
+
+CREATE DATABASE `wordpress-db`;
+
+GRANT ALL PRIVILEGES ON `wordpress-db`.* TO "wordpress-user"@"<private-ip-of-wp>";
+
+FLUSH PRIVILEGES;
+
+exit

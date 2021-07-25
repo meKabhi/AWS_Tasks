@@ -1,0 +1,15 @@
+sudo yum install -y mysql-server
+
+sudo service mysqld start
+
+mysql -u root -p
+
+CREATE USER 'wordpress-user'@'192.168.0.228' IDENTIFIED BY 'password';
+
+CREATE DATABASE `wordpress-db`;
+
+GRANT ALL PRIVILEGES ON `wordpress-db`.* TO "wordpress-user"@"192.168.0.228";
+
+FLUSH PRIVILEGES;
+
+exit
